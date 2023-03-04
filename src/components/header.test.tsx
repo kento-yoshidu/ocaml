@@ -5,6 +5,6 @@ describe("Rendering Header", () => {
   it("Should render site name", () => {
     render(<Header />)
 
-    expect(screen.getByText("Sample Page 3")).toBeTruthy()
+    expect(screen.getByText("Sample Page 34")).toBeTruthy()
   })
 })
