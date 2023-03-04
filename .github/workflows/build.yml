@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+env:
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+  SLACK_USERNAME: DeployBot
+  SLACK_CHANNEL: develop
+  SLACK_ICON: https://example.com/image/icon_bot.png
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,7 +19,24 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      
+
       - run: npm ci
       - run: npm run build
       - run: npm run test
+
+      #-- Slack通知 --#
+      # 成功
+      - name: Slack Notification on Success
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TITLE: Deploy Success
+          SLACK_COLOR: good
+
+      # 失敗
+      - name: Slack Notification on Failure
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TITLE: Deploy Failure
+          SLACK_COLOR: danger
