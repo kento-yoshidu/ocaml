@@ -7,9 +7,8 @@ on:
 
 env:
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-  SLACK_USERNAME: DeployBot
-  SLACK_CHANNEL: develop
-  SLACK_ICON: https://example.com/image/icon_bot.png
+  SLACK_USERNAME: ✨ SamplePage3 Bot
+  SLACK_CHANNEL: github-notifier
 
 jobs:
   build:
@@ -30,7 +29,7 @@ jobs:
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_TITLE: Deploy Success
+          SLACK_TITLE: ✅ Deploy Success
           SLACK_COLOR: good
           SLACK_MESSAGE: 'Pull request can be merge: ${{ github.repository }}'
 
@@ -39,5 +38,5 @@ jobs:
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_TITLE: Deploy Failure
+          SLACK_TITLE: ❌ Deploy Failure
           SLACK_COLOR: danger
