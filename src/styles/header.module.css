@@ -5,4 +5,13 @@
   background: #24c6dc;
   background: linear-gradient(to left bottom, var(--main-color), var(--sub-color));
   overflow: hidden;
+  color: #fff;
+}
+
+.text {
+  color: #fff;
+  text-align-last: justify;
+  width: 30%;
+  border: 1px solid red;
+  font-size: 2rem;
 }
