@@ -32,6 +32,7 @@ jobs:
         env:
           SLACK_TITLE: Deploy Success
           SLACK_COLOR: good
+          SLACK_MESSAGE: 'Pull request can be merge: ${{ github.repository }}'
 
       # 失敗
       - name: Slack Notification on Failure
