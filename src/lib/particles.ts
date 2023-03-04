@@ -68,9 +68,6 @@ const ParticlesConfig = {
     }
   },
   detectRetina: true,
-  fullScreen: {
-    enable: false
-  }
 }
 
 export default ParticlesConfig

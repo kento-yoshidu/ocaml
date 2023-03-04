@@ -1,9 +1,8 @@
 import styles from "../styles/header.module.css"
 import Particles from "react-tsparticles"
+import { loadFull } from 'tsparticles'
 
 import ParticlesConfig from "../lib/particles"
-
-import { loadFull } from 'tsparticles'
 
 const Header = () => {
   return (
