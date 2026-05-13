@@ -1,6 +1,6 @@
 (* https://atcoder.jp/contests/abc457/tasks/abc457_a *)
 
-let fn n a x =
+let fn _n a x =
     a.(x-1)
 
 let () =
