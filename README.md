@@ -6,8 +6,10 @@ let fn p q x y =
         "Yes"
 
 let () =
-    let p, q = Scanf.scanf " %d %d" (fun i j -> (i, j)) in
-    let x, y = Scanf.scanf " %d %d" (fun i j -> (i, j)) in
+    (* 1行読み込み *)
+    let s = read_line () in
+
+    let a, b = Scanf.scanf " %d %d" (fun i j -> (i, j)) in
 
     print_endline (fn p q x y)
 ```
